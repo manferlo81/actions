@@ -15,9 +15,6 @@ jobs:
   create-release:
     runs-on: ubuntu-latest
 
-    env:
-      TAG_NAME: ${{ github.event_name == 'push' && github.ref_name || inputs.tag_name }}
-
     permissions:
       contents: write
 
@@ -31,3 +28,5 @@ jobs:
           generate_release_notes: true
           make_latest: true
           name: ${{ env.TAG_NAME }}
+        env:
+          TAG_NAME: ${{ github.event_name == 'push' && github.ref_name || inputs.tag_name }}
