@@ -1,0 +1,39 @@
+name: Checkout, Setup NodeJS and Install dependencies
+description: Checkout, Setup NodeJS and Install dependencies
+
+branding:
+  icon: arrow-down-circle
+  color: purple
+
+author: manferlo81
+
+inputs:
+  node-version:
+    description: Version of NodeJS to setup
+    default: lts
+
+  cache-hash-path:
+    description: Path to file to hash and use as cache key
+    default: "./package-lock.json"
+
+  registry-url:
+    description: Registry URL for publishing packages
+    default: https://registry.npmjs.org/
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js ${{ inputs.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: npm
+        cache-dependency-path: ${{ inputs.cache-hash-path }}
+        registry-url: ${{ inputs.registry-url }}
+
+    - name: Install dependencies
+      shell: bash
+      run: npm ci
