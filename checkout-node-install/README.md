@@ -57,11 +57,11 @@ runs:
 
 ## Inputs
 
-| Input | Description | Default value |
-| ----- | ----------- | ------------- |
-| `node-version` | Version of NodeJS to setup | `"lts"` |
-| `cache-hash-path` | Path to file to hash and use as cache key | `"./package-lock.json"` |
-| `registry-url` | Registry URL for publishing packages | `"https://registry.npmjs.org/"` |
+| Input             | Description                               | Default value                   |
+| ----------------- | ----------------------------------------- | ------------------------------- |
+| `node-version`    | Version of NodeJS to setup                | `"lts"`                         |
+| `cache-hash-path` | Path to file to hash and use as cache key | `"./package-lock.json"`         |
+| `registry-url`    | Registry URL for publishing packages      | `"https://registry.npmjs.org/"` |
 
 ## License
 
