@@ -2,6 +2,24 @@
 
 A composite action to checkout, setup NodeJS and install dependencies
 
+## Index
+
+* [Usage](#usage)
+* [Source Code](#source-code)
+* [Inputs](#inputs)
+
+## Usage
+
+```yaml
+steps:
+  - name: Checkout, Setup NodeJS v20.x and Install dependencies
+    uses: manferlo81/actions/checkout-node-install@v1
+    with:
+      node-version: 20.x
+      cache-hash-path: "./package.json"
+      registry-url: https://npm.pkg.github.com/
+```
+
 ## Source Code
 
 ```yaml
@@ -37,14 +55,10 @@ runs:
       run: npm ci
 ```
 
-## Usage
+## Inputs
 
-```yaml
-steps:
-  - name: Checkout, Setup NodeJS v20.x and Install dependencies
-    uses: manferlo81/actions/checkout-node-install@v1
-    with:
-      node-version: 20.x
-      cache-hash-path: "./package.json"
-      registry-url: https://npm.pkg.github.com/
-```
+| Input | Description | Default value |
+| ----- | ----------- | ------------- |
+| `node-version` | Version of NodeJS to setup | `"lts"` |
+| `cache-hash-path` | Path to file to hash and use as cache key | `"./package-lock.json"` |
+| `registry-url` | Registry URL for publishing packages | `"https://registry.npmjs.org/"` |
