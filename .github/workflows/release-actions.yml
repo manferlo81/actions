@@ -22,11 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create release
-        uses: softprops/action-gh-release@v2
+      - name: Create GitHub Release
+        uses: ./create-release
         with:
-          generate_release_notes: true
-          make_latest: true
-          name: ${{ env.TAG_NAME }}
-        env:
-          TAG_NAME: ${{ github.event_name == 'push' && github.ref_name || inputs.tag_name }}
+          tag-name: ${{ github.event_name == 'push' && github.ref_name || inputs.tag_name }}

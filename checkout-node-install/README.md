@@ -13,7 +13,7 @@ A composite action to checkout, setup NodeJS and install dependencies
 ```yaml
 steps:
   - name: Checkout, Setup NodeJS v20.x and Install dependencies
-    uses: manferlo81/actions/checkout-node-install@v1
+    uses: manferlo81/actions/checkout-node-install@v0.0.1
     with:
       node-version: 20.x
       cache-hash-path: "./package.json"
@@ -23,6 +23,9 @@ steps:
 ## Source Code
 
 ```yaml
+name: Checkout, Setup NodeJS and Install dependencies
+description: Checkout, Setup NodeJS and Install dependencies
+
 inputs:
   node-version:
     description: Version of NodeJS to setup

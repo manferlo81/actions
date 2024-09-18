@@ -5,19 +5,22 @@ branding:
   icon: arrow-down-circle
   color: purple
 
-author: manferlo81
+author: Manuel Fernández
 
 inputs:
   node-version:
     description: Version of NodeJS to setup
+    required: false
     default: lts
 
   cache-hash-path:
     description: Path to file to hash and use as cache key
+    required: false
     default: "./package-lock.json"
 
   registry-url:
     description: Registry URL for publishing packages
+    required: false
     default: https://registry.npmjs.org/
 
 runs:
