@@ -7,6 +7,7 @@ A composite action to create a GitHub release
 * [Usage](#usage)
 * [Source Code](#source-code)
 * [Inputs](#inputs)
+* [Permissions](#permissions)
 
 ## Usage
 
@@ -52,6 +53,15 @@ runs:
 | ----------- | ---------------------------------------------- | ------------- |
 | `tag-name`  | Tag name                                       | `REQUIRED`    |
 | `latest`    | Whether or not to make this the latest release.<br />Anything other than `"false"` will be threated as `"true"`. | `"true"`        |
+
+## Permissions
+
+This action requires the `contents` permission to be set to `write` in order to be able to create a GitHub Release.
+
+```yaml
+permissions:
+  contents: write
+```
 
 ## License
 
