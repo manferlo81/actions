@@ -7,7 +7,7 @@ on:
 
   workflow_dispatch:
     inputs:
-      tag_name:
+      tag-name:
         description: Release tag
         required: true
 
@@ -25,4 +25,4 @@ jobs:
       - name: Create GitHub Release
         uses: ./create-release
         with:
-          tag-name: ${{ github.event_name == 'push' && github.ref_name || inputs.tag_name }}
+          tag-name: ${{ github.event_name != 'workflow_dispatch' && github.ref_name || inputs.tag-name }}

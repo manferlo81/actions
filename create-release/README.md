@@ -48,10 +48,10 @@ runs:
 
 ## Inputs
 
-| Input      | Description                                    | Default value |
-| -----------| ---------------------------------------------- | ------------- |
-| `tag-name` | Tag name                                       | `REQUIRED`    |
-| `latest`   | Whether or not to make this the latest release | `true`        |
+| Input       | Description                                    | Default value |
+| ----------- | ---------------------------------------------- | ------------- |
+| `tag-name`  | Tag name                                       | `REQUIRED`    |
+| `latest`    | Whether or not to make this the latest release.<br />Anything other than `"false"` will be threated as `"true"`. | `"true"`        |
 
 ## License
 
